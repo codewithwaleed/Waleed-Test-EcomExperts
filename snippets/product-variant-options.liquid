@@ -60,7 +60,7 @@
       {% endif %}
     >
     {% if product.variants[forloop.index0].image != blank %}
-      <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" style="background-image: url({{product.variants[forloop.index0].image | img_url: "small"}})"></label>
+      <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" style="background-size: 50px 50px, background-image: url({{product.variants[forloop.index0].image | img_url: "small"}})"></label>
       {% else %}
     <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
       {{ value -}} 
