@@ -72,7 +72,7 @@
     {% endif %}
 
 
-  {%- elsif block.settings.picker_type == 'dropdown' -%}
+  {%- elsif option.name == 'Size' -%}
     <option
       value="{{ value | escape }}"
       {% if option.selected_value == value %}
