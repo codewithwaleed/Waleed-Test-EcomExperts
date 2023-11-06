@@ -61,7 +61,7 @@
     >
 
     {% if option.name == "Color" %}
-                {%- assign variant_image_index = forloop.index0 | plus: 1 -%}
+                {%- assign variant_image_index = forloop.index0 | plus: 3 -%}
 {{variant_image_index}}
             <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0}}" style="width: 50px; height: 50px;background-position: center; background-image: url({{product.variants[variant_image_index].image | img_url: 'small'}})">
             </label>
