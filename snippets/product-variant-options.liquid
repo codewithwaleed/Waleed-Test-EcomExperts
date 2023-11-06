@@ -59,14 +59,29 @@
         class="disabled"
       {% endif %}
     >
+
+    {% if option.name == "Color" %}
     {% if product.variants[forloop.index0].image != blank %}
       <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" style="width: 50px; height: 50px;background-position: center; background-image: url({{value | append: '.png'}})"></label>
       {% else %}
     <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
       {{ value -}} 
+            <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" style="width: 50px; height: 50px;background-position: center; background-image: url({{value | append: '.png'}})"></label>
+
       <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
     </label>
     {% endif %}
+     <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+      {{ value -}} 
+            <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" style="width: 50px; height: 50px;background-position: center; background-image: url({{value | append: '.png'}})"></label>
+
+      <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
+    </label>
+    {% else %}
+
+{% endif %}
+
+
   {%- elsif block.settings.picker_type == 'dropdown' -%}
     <option
       value="{{ value | escape }}"
