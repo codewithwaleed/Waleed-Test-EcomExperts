@@ -11,7 +11,7 @@
 {% endcomment %}
 {{product.options_with_values}}
 {{block.settings.picker_type}}
-{{product.variants}}
+{{product}}
 {%- unless product.has_only_default_variant -%}
   {%- if block.settings.picker_type == 'button' -%}
     <variant-radios
