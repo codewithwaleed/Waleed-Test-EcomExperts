@@ -45,7 +45,7 @@
     endfor
   -%}
 
-  {%- if block.settings.picker_type == 'button' and option.name != 'Size' -%}
+  {%- if block.settings.picker_type == 'button' -%}
     <input
       type="radio"
       id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
@@ -72,7 +72,7 @@
     {% endif %}
 
 
-  {%- elsif option.name == 'Size' -%}
+  {%- elsif block.settings.picker_type == 'dropdown' -%}
     <option
       value="{{ value | escape }}"
       {% if option.selected_value == value %}
