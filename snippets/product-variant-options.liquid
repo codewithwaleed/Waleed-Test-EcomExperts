@@ -62,6 +62,7 @@
     <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
 
       <img src="{{ product.selected_or_first_available_variant.featured_image | img_url: "small" }}"/>
+      <img src="{{ product.variants[forloop.index0].image | img_url: "small" }}"/>
 
       <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
     </label>
