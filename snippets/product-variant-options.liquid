@@ -73,7 +73,11 @@
 
 
   {%- elsif block.settings.picker_type == 'dropdown' -%}
-    <option
+      {% if option.name == "Color" %}
+            <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" style="width: 50px; height: 50px;background-position: center; background-image: url({{product.variants[forloop.index0].image | img_url: 'small'}})">
+            </label>
+    {% else %}
+     <option
       value="{{ value | escape }}"
       {% if option.selected_value == value %}
         selected="selected"
@@ -85,5 +89,8 @@
         {{- value -}}
       {%- endif %}
     </option>
+    
+    {% endif %}
+   
   {%- endif -%}
 {%- endfor -%}
