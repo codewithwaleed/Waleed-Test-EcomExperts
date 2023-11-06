@@ -61,14 +61,13 @@
     >
 
     {% if option.name == "Color" %}
-            <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" style="width: 50px; height: 50px;background-position: center; background-image: url({{product.variants[forloop.index0].image | img_url: 'small'}})">
+            <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 + 2}}" style="width: 50px; height: 50px;background-position: center; background-image: url({{product.variants[forloop.index0].image | img_url: 'small'}})">
             </label>
     {% else %}
        <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
         {{ value -}} 
         <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
     </label>
-    
     {% endif %}
 
 
