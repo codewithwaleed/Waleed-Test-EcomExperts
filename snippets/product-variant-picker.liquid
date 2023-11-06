@@ -9,8 +9,9 @@
   Usage:
   {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 {% endcomment %}
-{{product}}
+{{product.options_with_values}}
 {{block.settings.picker_type}}
+{{product.variants}}
 {%- unless product.has_only_default_variant -%}
   {%- if block.settings.picker_type == 'button' -%}
     <variant-radios
