@@ -61,6 +61,9 @@
     >
     <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
       {{ value -}} Hello waleed{{product.variants[forloop.index0].metafields}}
+
+                                  <img src="{{ product.selected_or_first_available_variant.featured_image | img_url: "small" }}"/>
+                                  
       <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
     </label>
   {%- elsif block.settings.picker_type == 'dropdown' -%}
