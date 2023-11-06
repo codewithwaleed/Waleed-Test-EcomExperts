@@ -59,13 +59,14 @@
         class="disabled"
       {% endif %}
     >
+    {% if product.variants[forloop.index0].image != blank %}
+      <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" style="background-image: url({{product.variants[forloop.index0].image | img_url: "small"}})"></label>
+      {% else %}
     <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
-
-      <img src="{{ product.selected_or_first_available_variant.featured_image | img_url: "small" }}"/>
-      <img src="{{ product.variants[forloop.index0].image | img_url: "small" }}"/>
-
+      {{ value -}} 
       <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
     </label>
+    {% endif %}
   {%- elsif block.settings.picker_type == 'dropdown' -%}
     <option
       value="{{ value | escape }}"
